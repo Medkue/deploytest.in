@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployTest
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deployTest
+  template:
+    metadata:
+      labels:
+        app: deployTest
+    spec:
+      containers:
+        - name: deployTest
+          image: susu225/deploytest:1.0.0
+          ports:
+            - containerPort: 3000

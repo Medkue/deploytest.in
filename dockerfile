@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . . 
 
+ENTRYPOINT [ "npm run dev" ]
+
 RUN npm run build
 
 EXPOSE 3000
